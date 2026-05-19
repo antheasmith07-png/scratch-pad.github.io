@@ -12,26 +12,58 @@
  * TIP: In JavaScript, how can we decipher the length of a String?
  * work?
  */
-
+/*
+I: string datatype
+O: return length of the string as a number
+C: N/A
+E: N/A
+*/
 function length(string) {
   // YOUR CODE HERE //
+  //Use .length property to determine the length of the string
+  return string.length
 }
+//use console.log to determine the length of a string
+console.log(length("string"));
 
 /**
  * Given an input String, return a new String forced to lowercase.
  */
-
+/*
+I: string datatype
+O: return a new string that is lowercase
+C: N/A
+E: N/A
+*/
+//assign string to a variable
+let string = "Hello";
 function toLowerCase(string) {
   // YOUR CODE HERE //
+  //use the .lowercase property to lower case the string
+  return string.toLowerCase()
 }
+//log to see if the string is lowercased
+console.log(toLowerCase("string"));
 
 /**
  * Given an input String, return a new String forced to uppercase.
  */
-
+/*
+I: a string datatype
+O: return a new string that is uppercased
+C: N/A
+E: N/A
+*/
+//assign string to a variable
+let string = "Hello";
 function toUpperCase(string) {
   // YOUR CODE HERE //
+  //Use the .toUpperCase function to return the string as all Upper Case
+
+  return string.toUpperCase()
 }
+// log to the console
+console.log(toUpperCase(string));
 
 /**
  * Given an input String, return a new String forced to dash-case.
@@ -43,8 +75,17 @@ function toUpperCase(string) {
  * TIP: Solve this problem using a combination of split and join.
  *
  */
+/*
+I: a string datatype
+O: return a new string with a dash
+C: must use the split and join method
+E: N/A
+*/
+let string = "Hello World";
 function toDashCase(string) {
   // YOUR CODE HERE //
+  //split string using the .split method
+  return string.split(" ")
 }
 
 /**
