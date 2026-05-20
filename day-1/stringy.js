@@ -23,7 +23,7 @@ E: N/A
 function length(string) {
   // YOUR CODE HERE //
   //Use .length property to determine the length of the string
-  return string.length
+  return string.length;
 }
 //use console.log to determine the length of a string
 console.log(length('hello'));
@@ -57,7 +57,7 @@ C: N/A
 E: N/A
 */
 //assign string to a variable
-let string = "Hello";
+let string2 = "Hello";
 function toUpperCase(string) {
   // YOUR CODE HERE //
   //Use the .toUpperCase function to return the string as all Upper Case
@@ -83,14 +83,14 @@ O: return a new string with a dash
 C: must use the split and join method
 E: N/A
 */
-let string = "Hello World";
+
 function toDashCase(string) {
   // YOUR CODE HERE //
   //split string using the .split method and then join with - with the .join method
 
-    return string.toLowerCase.split(' ').join('-');
+    return string.toLowerCase().split(' ').join('-');
   }
-
+// log
   console.log(toDashCase(string)); 
 
 
@@ -184,11 +184,11 @@ E: N/A
 function join(stringOne, stringTwo) {
   // YOUR CODE HERE //
     // Use the + operator to join the two strings
-    return stringOne += stringTwo;
-  }
-    // Join all elements in the array with no separator
-    var args = join("Wish", "Fish");
-    console.log(args);
+    var args = Array.from(arguments);
+    return args.join("");
+    //rerturn all elements in the array with no separator
+}
+   
 
 
 /**

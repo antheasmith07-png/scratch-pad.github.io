@@ -20,15 +20,15 @@ function fizzBuzz() {
   // YOUR CODE HERE //
   //create a while loop that starts at 1 and stops at 100
   var i = 1;
-  while (i < 100) {
+  while (i <= 100) {
     // if statement that returns "FizzBuzz" if a multiples of 3 and 5
     if (i % 3 === 0 && i % 5 === 0) {
       console.log("FizzBuzz");
       // if statement that returns "Fizz" if a multiples of 3
-    } if (i % 3 === 0) {
+    } else if (i % 3 === 0) {
       console.log("Fizz");
       // if statement that returns "Buzz" if number is multiples 5
-    } if ( i % 5 === 0) {
+    } else if ( i % 5 === 0) {
       console.log("Buzz");
     } else {
       console.log(i);

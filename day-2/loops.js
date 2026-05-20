@@ -67,10 +67,9 @@ let object = {
 };
 function getObjectKeys(object) {
   // YOUR CODE HERE //
-  for (var key in object) {
-    console.log(key);
+  return Object.keys(object);
   }
-}
+
 console.log(getObjectKeys(object));
 
 /**
@@ -96,9 +95,14 @@ console.log(pringObjectKeys(object));
 function getObjectValues(object) {
   // YOUR CODE HERE //
   // create for loop
-  for (var key in object) {
-    console.log(key);
-  }
+    var values = [];
+  
+    for (var key in object) {
+      // Use bracket notation [key] to access the value dynamically
+      values.push(object[key]);
+    }
+    
+    return values;
 }
 console.log(getObjectValues(object));
 /**
@@ -115,7 +119,7 @@ function printObjectValues(object) {
   // YOUR CODE HERE //
   for (var key in object) {
     console.log(object[key]);
-  }
+}
 }
 console.log(printObjectValues(object));
 /**
