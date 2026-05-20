@@ -28,9 +28,30 @@
  *   c. The tests are CASE sensitive, so you MUST console.log('Good Night!') with
  *      the exact case.
  */
-
+/*
+I: hour of the day
+O: a greeting
+C: must use if statements
+E: use exact case
+*/
 function greeter(hour) {
   // YOUR CODE HERE
+   // hour is 0-11 // greeterApp(10) => logs 'Good Morning!'
+ if (hour >= 0 && hour <= 11) {
+  console.log('Good Morning!');
+ }
+  // hour is 12-16 // greeterApp(14) => logs 'Good Afternoon!'
+ else if (hour >= 12 && hour <= 16) {
+  console.log('Good Afternoon!');
+ 
+  // hour is 17-21 // greeterApp(20) => 'Good Evening!'
+ } else if (hour >= 17 && hour <= 21) {
+  console.log ('Good Evening!'); 
+ } else {
+  console.log('Good Night!'); 
+ }
+ // hour is 22-24 // greeterApp(22) => 'Good Night!'
+
 }
 
 /*

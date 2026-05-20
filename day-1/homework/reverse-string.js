@@ -18,10 +18,32 @@
  *  c. how do you access individual characters of a String?
  *  d. how do you concatenate Strings? What operator do we use?
  */
+/*
+I: string datatype "hello"
+O: return string reversed "olleh"
+C: Use a loop and concatenate
+E: N/A
+*/
 
 function reverseString(input) {
   // YOUR CODE HERE //
-}
+    // Create something to collect the output
+    let reversed = '';
+  
+    //  Use a for-loop starting at the last index and ending at 0
+    // Index of last char is str.length - 1
+    for (let i = input.length - 1; i >= 0; i--) {
+      
+      // Use the += operator to concatenate
+      reversed += input[i];
+    }
+  
+    return reversed;
+  }
+  // log
+  console.log(reverseString('hello')); // 'olleh'
+  
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (
