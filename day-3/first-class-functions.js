@@ -11,9 +11,16 @@
  * return a Function that tests whether a given value is greater than the
  * base.
  */
-
+/*
+I: input base as string or number
+O: return function that tests whether the value is greater than the base
+*/
 function createGreaterThanFilter(base) {
   // YOUR CODE HERE
+  //create a function that takes a value and tests if it greater than the base
+  return function(value) {
+    return value > base;
+  };
 }
 
 /**
@@ -22,8 +29,14 @@ function createGreaterThanFilter(base) {
  * base. (test means return true or false)
  *
  */
-
+/*
+I: input base as string or number
+O: return function that tests whether the value is less than the base
+*/
 function createLessThanFilter(base) {
+  return function (value) {
+    return value < base;
+  };
   // YOUR CODE HERE
 }
 
@@ -34,9 +47,19 @@ function createLessThanFilter(base) {
  *
  * This function needs to be case insensitive.
  */
-
+/*
+I: startWiths character
+O: test whether the startsWith character matches a given string using a function
+*/
 function createStartsWithFilter(startsWith) {
   // YOUR CODE HERE
+  return function (string) {
+    // Get the first character of the string
+    const firstChar = string[0];
+    
+    // Check if the string is empty and compare case-insensitively
+    return firstChar?.toLowerCase() === startsWith.toLowerCase();
+  };
 }
 
 /**
@@ -46,9 +69,19 @@ function createStartsWithFilter(startsWith) {
  *
  * This function needs to be case insensitive.
  */
-
+/*
+I: endsWith single character
+O: return a function that tests for the last character in the string to match with endswith
+*/
 function createEndsWithFilter(endsWith) {
   // YOUR CODE HERE //
+  return function (string) {
+    // Get the last character of the string
+    const lastChar = string[string.length - 1];
+    
+    // Check if the string is empty and compare case-insensitively
+    return lastChar?.toLowerCase() === endsWith.toLowerCase();
+  };
 }
 
 /**
@@ -67,11 +100,30 @@ function createEndsWithFilter(endsWith) {
  *    // returns => ['a!', 'b!']
  *
  */
+/*
+I: an array of strings and a funtion to modify a string
+O:return the array of strings modified
+C: N/A
+E: N/A
+*/
 function modifyStrings(strings, modify) {
   // YOUR CODE HERE
+  //create an output to put a new Array
+  var output=[];
+  //create a for loop to loop over strings
+  for (var i = 0; i < strings.length; i++) {
+    // pass each string to the modify function and capture the result
+    var newStr = modify(strings[i]);
+    // push that result into our output collection
+    output.push(newStr);
+  }
+  
+  // return the final array
+  return output;
 }
 
-/**
+
+  /**
  * Given an Array of Strings and a Function designed to test the String in some
  * way and return a Boolean on whether it passed, return true if ALL Strings pass the test.
  *
@@ -91,7 +143,20 @@ function modifyStrings(strings, modify) {
 
 function allStringsPass(strings, test) {
   // YOUR CODE HERE //
+  var pass=[];
+  //create a for loop to loop over strings
+  for (var i = 0; i < strings.length; i++) {
+    // pass each string to the modify function and capture the result
+    if (!test(strings[i])) {
+      return false; // Return false early if any string fails
+    }
+  }
+  return true; // Return true only if all strings pass
 }
+
+  
+
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (

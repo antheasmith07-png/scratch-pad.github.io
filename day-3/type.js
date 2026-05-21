@@ -14,8 +14,15 @@
  *
  * HINT: There is a method that can help with this.
  */
+/*
+I: value
+O: determine if it is an Array and state true or false
+C: N/A
+E: N/A
+*/
 function isArray(value) {
   // YOUR CODE HERE //
+ return Array.isArray(value); //log true if an Array 
 }
 
 /**
@@ -32,8 +39,20 @@ function isArray(value) {
  * isObject([1, 2, 3]); // false
  *
  */
+/*
+I: value
+O: return true if the value is an object, false if not
+C: N/A
+E: N/A
+*/
 function isObject(value) {
   // YOUR CODE HERE //
+  if (Array.isArray(value)) return false;
+  //eliminate the null value as an object
+  if (value === null) return false;
+  // eliminate date as an object
+  if (value instanceof Date) return false;
+  return typeof value === 'object';
 }
 
 /**
@@ -42,8 +61,22 @@ function isObject(value) {
  *
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
+/*
+I: value
+O: return true if an Array or Object, false if otherwise
+C: N/A
+E: N/A
+*/
 function isCollection(value) {
   // YOUR CODE HERE //
+  //if array is array return true
+  if (Array.isArray(value)) return true;
+  //eliminate the null value as an object
+  if (value === null) return false;
+  // eliminate date as an object
+  if (value instanceof Date) return false;
+  // if equal to object as a collection return true
+  return typeof value === 'object';
 }
 
 /**
@@ -65,8 +98,16 @@ function isCollection(value) {
  *    typeOf("javascript") -> "string"
  *    typeOf([1,2,3]) -> "array"
  */
+/*
+I: value
+O: return the typeof value as a string
+C: N/A
+E: N/A
+*/
 function typeOf(value) {
   // YOUR CODE HERE //
+
+  return typeof(value);
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
