@@ -90,9 +90,8 @@ E:N/A
 function removeContact(array, contact) {
   // YOUR CODE HERE
   for (var i = 0; i < array.length; i++) {
- var newContact = {array[i]:id, array[i]:nameFirst, array[i]:nameLast};
     //test if contact matches anything in the array
-   if (newContact === contact) {
+   if (array[i].id === contact.id) {
     //if contact matches delete contact object at index i
     array.splice(i, 1);
     //return updated array
@@ -119,9 +118,9 @@ function getNamesThatBeginWithLetter(array, letter) {
   // YOUR CODE HERE
   for (var i = 0; i < array.length; i++) {
    var firstLetter = array[i].nameFirst[0];
-    //test if contact first name matches the letter
+    //test if letter of contact first name matches the letter
    if (firstLetter === letter) {
-    return begin.push(array[i]);
+    begin.push(array[i]);
 }
   }
     return begin;
@@ -142,8 +141,12 @@ E: N/A
 */
 function getAllContactNames(array) {
   // YOUR CODE HERE
-  // return a string by using the join operator to add linebrea character
-  return contacts.map(contact => contact.fullName).join('\n') + '\n';
+  let result = '';
+  for (let i = 0; i < array.length; i++) {
+    // return a string by using the linebreak character
+    result += `${array[i].nameFirst}  ${array[i].nameLast}\n`;
+}
+  return result;
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
