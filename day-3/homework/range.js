@@ -21,9 +21,29 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
+/*
+I: Create a range function tha takes 2 integers and returns an array between the inegers
+O: If the first argument is greater than the 2nd return the range in reverse order
+*/
 function range(start, end) {
-  // YOUR CODE HERE //
+   // YOUR CODE HERE //
+  //create an array to collect the output 
+  var output = [];
+  if (start <= end) {
+    // Forward range loop
+    for (let i = start; i <= end; i++) {
+      output.push(i);
+    }
+  } else {
+    // Reverse range loop
+    for (let i = start; i >= end; i--) {
+      output.push(i);
+    }
+  }
+// Return the output
+  return output; 
 }
+  
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (

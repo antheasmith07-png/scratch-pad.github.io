@@ -106,6 +106,12 @@ E: N/A
 */
 function typeOf(value) {
   // YOUR CODE HERE //
+  //return null for value null
+  if (value === null) return "null";
+  //return array if tested value is an array
+  if (Array.isArray(value)) return "array";
+  //return date if there is instance of a Date
+  if (value instanceof Date) return "date";
 
   return typeof(value);
 }

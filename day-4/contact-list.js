@@ -9,9 +9,20 @@
  * ex: makeContact(0, 'Max', 'Gaudin') // => { id: 0, nameFirst: 'Max', nameLast: 'Gaudin' }
  *
  */
-
+/*
+I:Create a factory function that takes in id, nameFirst, and nameLast as parameters
+O: return a contact object
+C: N/A
+E: N/A
+*/
 function makeContact(id, nameFirst, nameLast) {
   // Solve this function first
+  //return an object with nameFirst and nameLast
+  return {
+    id: id,
+    nameFirst: nameFirst,
+    nameLast: nameLast,
+  };
 }
 
 var contacts = [
@@ -48,9 +59,21 @@ var contacts = [
  * that matches the `fullName` input, or it should returned undefined if no object is found
  * matching.
  */
+/*
+I:create a function that takes in array of objects and fullName
+O:return the contact object that matches the fullName or undefined if no object matches
+C: N/A
+E: N/A
+*/
 
 function findContact(array, fullName) {
   // YOUR CODE HERE
+  for (var i = 0; i < array.length; i++) {
+    var combinedName = array[i].nameFirst + " " + array[i].nameLast;
+   if (combinedName === fullName) {
+    return array[i];
+   }
+  }
 }
 
 /**
@@ -58,8 +81,25 @@ function findContact(array, fullName) {
  * contact object to remove. This function search through the array and remove the contact object
  * if found.
  */
+/*
+I: create function that takes in the parameters array of contacts and a contact object to remove
+O: search through the array and remove contact if found
+C:N/A
+E:N/A
+*/
 function removeContact(array, contact) {
   // YOUR CODE HERE
+  for (var i = 0; i < array.length; i++) {
+ var newContact = {array[i].id, array[i].nameFirst, array[i].nameLast};
+    //test if contact matches anything in the array
+   if (newContact === contact) {
+    //if contact matches delete contact object at index i
+    array.splice(i, 1);
+    //return updated array
+    return array;
+   }
+   
+  }
 }
 
 /**
@@ -67,10 +107,25 @@ function removeContact(array, contact) {
  * This function should iterate through the array and return a new array of all of the contact
  * objects whose first names begin with input letter
  */
+/*
+I: Create a function that takes in the parameters array of objects and a letter
+O: return contact objects whose first names begin with the letter inputed
+C: N/A
+E: N/A
+*/
 function getNamesThatBeginWithLetter(array, letter) {
+  //create a variable to push new array into
+  var begin = [];
   // YOUR CODE HERE
+  for (var i = 0; i < array.length; i++) {
+   var firstLetter = array[i].nameFirst[0];
+    //test if contact first name matches the letter
+   if (firstLetter === letter) {
+    return begin.push(array[i]);
 }
-
+  }
+    return begin;
+}
 /**
  * Create a function called `getAllContactNames` that takes in an array of contact objects.
  * This function should return a string of each object's full name followed by a linebreak character.
@@ -79,8 +134,16 @@ function getNamesThatBeginWithLetter(array, letter) {
  *
  *    getAllContactNames(contacts); // => 'Max Gaudin\nJohn Fabroni\nAlon robinson\nMykia Smith\Alice Green'
  */
+/*
+I: create a function that takes in an array of contact objects
+O: return a string of each objects full name followed by a linebreak character
+C: N/A
+E: N/A
+*/
 function getAllContactNames(array) {
   // YOUR CODE HERE
+  // return a string by using the join operator to add linebrea character
+  return contacts.map(contact => contact.fullName).join('\n') + '\n';
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
