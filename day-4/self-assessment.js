@@ -30,7 +30,7 @@ let count = 0;
       //if count is less than 4 return 0
 }    
 }
-} else {
+} else if {
       return 0;
 }
 }

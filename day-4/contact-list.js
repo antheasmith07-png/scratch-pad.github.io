@@ -90,7 +90,7 @@ E:N/A
 function removeContact(array, contact) {
   // YOUR CODE HERE
   for (var i = 0; i < array.length; i++) {
- var newContact = {array[i].id, array[i].nameFirst, array[i].nameLast};
+ var newContact = {array[i]:id, array[i]:nameFirst, array[i]:nameLast};
     //test if contact matches anything in the array
    if (newContact === contact) {
     //if contact matches delete contact object at index i
