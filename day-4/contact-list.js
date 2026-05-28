@@ -146,7 +146,8 @@ function getAllContactNames(array) {
     // return a string by using the linebreak character
     result += `${array[i].nameFirst}  ${array[i].nameLast}\n`;
 }
-  return result;
+ var newResult =  result.slice(0, -1);
+  return newResult;
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
